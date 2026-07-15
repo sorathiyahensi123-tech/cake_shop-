@@ -1,0 +1,946 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+:root {
+    --gold: #d4af37;
+    --gold-dark: #b4932a;
+    --brown-text: #5d4037;
+    /* Deep brown */
+    --beige-btn: #f4ecdf;
+    --dark-text: #2c2c2c;
+    --light-bg: #f9f9f9;
+    --white: #ffffff;
+    --product-img-height: 350px; /* uniform product image height; change as needed */
+}
+
+/* ensure main category heading on homepage is gold */
+.hero-title { color: var(--gold) !important; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    color: var(--dark-text);
+    overflow-x: hidden;
+}
+
+/* Header / Navbar */
+.dashboard-header {
+    background: #fff;
+    padding: 15px 0;
+}
+
+.navbar-elevated {
+    box-shadow: none !important;
+    padding: 0 3rem;
+    background: transparent !important;
+}
+
+.navbar-brand-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a3b2a !important;
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.brand-icon i {
+    color: var(--gold);
+    /* Make it look a bit more like the outline if possible, or just solid gold */
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.brand-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    /* Larger as per image */
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+}
+
+.brand-subtext {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8d6e63;
+    /* Lighter brown/taupe */
+    margin-left: 2px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #4a4a4a !important;
+    margin: 0 18px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--gold) !important;
+}
+
+/* Right Side Actions */
+.cart-icon-btn {
+    width: 50px;
+    height: 50px;
+    background: var(--beige-btn);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5d4037;
+    margin-right: 20px;
+    position: relative;
+    transition: all 0.2s;
+    font-size: 1.2rem;
+}
+
+.cart-icon-btn:hover {
+    background: #e8e0d0;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: #e84a5f;
+    color: #fff;
+    font-size: 0.7rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-order {
+    background: linear-gradient(135deg, #f3c623 0%, #e68a00 100%);
+    color: #fff !important;
+    border-radius: 50px;
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(230, 138, 0, 0.3);
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(230, 138, 0, 0.4);
+}
+
+/* Hero Section Container */
+.hero-wrapper {
+    padding: 0 3rem 3rem 3rem;
+    /* Spacing */
+}
+
+.hero-card {
+    position: relative;
+    border-radius: 30px;
+    /* Big rounded corners */
+    overflow: hidden;
+    height: 600px;
+    /* Use a wedding cake image from uploads for a beautiful hero */
+    background: url('../uploads/wedding cake/12.jpg') center center no-repeat;
+    background-size: cover;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Inner Top Nav */
+.hero-top-nav {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-top-nav,
+.price-tag,
+.review-badge {
+    z-index: 4; /* ensure overlays sit above hero image */
+}
+
+.hero-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    /* Gold text as requested */
+    letter-spacing: 1px;
+    /* Hero background will use an <img> for better native-resolution rendering */
+    background: none;
+}
+
+/* Use an actual image element for crisp rendering; covers entire hero area */
+.hero-card .hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 1;
+    display: block;
+}
+.hero-menu a {
+    color: #000;
+    /* Black text */
+    font-size: 0.9rem;
+    margin-left: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.hero-menu a:hover {
+    color: var(--gold);
+}
+
+.hero-menu a {
+    color: #4a3b2a;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-contact-btn {
+    border: 1px solid #4a3b2a;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #4a3b2a;
+}
+
+/* Pink Price Tag */
+.price-tag {
+    position: absolute;
+    bottom: 50px;
+    left: -20px;
+    /* Hanging off slightly or flush */
+    background: var(--gold);
+    /* Gold background to match image/theme */
+    color: #fff;
+    /* White text for better contrast on Gold */
+    padding: 20px 40px 20px 50px;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 5px 5px 15px rgba(212, 175, 55, 0.4);
+    z-index: 4;
+}
+
+.price-tag .small-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    display: block;
+}
+
+.price-tag .price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1;
+}
+
+/* Review Badge */
+.review-badge {
+    position: absolute;
+    top: 40%;
+    right: 50px;
+    /* Slightly more contrast for readability on image */
+    background: rgba(255, 255, 255, 0.98);
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 4;
+    min-width: 180px;
+}
+
+.stars {
+    color: var(--gold);
+    /* Golden stars */
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.rating-num {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--gold);
+    /* Gold rating number */
+}
+
+.review-text {
+    display: block;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* General Layout Tweaks */
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* =========================================
+   Global Premium Overrides
+   ========================================= */
+
+/* Buttons */
+.btn-primary,
+.btn-brand {
+    background: linear-gradient(135deg, #f3c623 0%, #e68a00 100%) !important;
+    border: none !important;
+    color: #fff !important;
+    border-radius: 50px !important;
+    padding: 10px 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(230, 138, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-brand:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 138, 0, 0.5);
+    background: linear-gradient(135deg, #e0b41c 0%, #d47f00 100%) !important;
+}
+
+.btn-outline-light {
+    border: 2px solid var(--gold) !important;
+    color: var(--brown-text) !important;
+    border-radius: 50px !important;
+    font-weight: 600;
+}
+
+.btn-outline-light:hover {
+    background: var(--gold) !important;
+    color: #fff !important;
+}
+
+/* Modern Product Card (Delicious Creations Style) */
+.product-thumbnail {
+    border: none !important;
+    border-radius: 20px !important;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    /* Softer shadow */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+    /* flex:1 allows the thumbnail to grow inside a flex column parent */
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-thumbnail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Ensure the column wrappers stretch so .product-thumbnail can fill height */
+.dashboard-content .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Make product content grow so buttons sit at the bottom consistently */
+.product-content {
+    padding: 20px;
+    text-align: center;
+    /* Center align like reference */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    min-height: 140px; /* ensures a baseline content area */
+}
+
+.product_btn {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.product_btn .btn {
+    width: auto !important;
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 30px;
+}
+
+.product-img-head {
+    position: relative;
+    width: 100%;
+    height: 260px; /* fixed preview height for uniform product cards */
+    overflow: hidden;
+}
+
+.product-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Override any earlier padding so images sit flush to the top of the image area */
+.product-img {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img img {
+    display: block;
+    margin: 0;
+}
+
+.product-thumbnail:hover .product-img img {
+    transform: scale(1.05);
+    /* Zoom effect */
+}
+
+/* Badges */
+.badge-custom {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    z-index: 2;
+}
+
+.badge-bestseller {
+    background: #e84a5f;
+}
+
+.badge-new {
+    background: #f3c623;
+    color: #333;
+}
+
+/* Heart Icon */
+.wishlist-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wishlist-icon:hover {
+    color: #e84a5f;
+    transform: scale(1.1);
+}
+
+.product-content {
+    padding: 20px;
+    text-align: center;
+    /* Center align like reference */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--brown-text);
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--gold-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Hide origin button/layout to match cleaner look if verified, keeping for now but simplified */
+.product_btn .btn {
+    width: 100% !important;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+/* Bootstrap Cards (Categories etc) */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--brown-text);
+}
+
+/* Page Headers */
+.pageheader-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--brown-text);
+}
+
+.breadcrumb-link {
+    color: var(--gold-dark);
+}
+
+
+/* =========================================
+   New Split Hero Layout Styles
+   ========================================= */
+
+.hero-wrapper {
+    padding: 0 3rem 3rem 1rem;
+    /* Adjusted info */
+    background: #fffafa;
+    /* Very subtle background for the whole hero area */
+}
+
+/* Make hero text use golden color as requested */
+.hero-wrapper,
+.hero-wrapper .hero-title,
+.hero-wrapper .hero-subtitle,
+.hero-wrapper .stat-number,
+.hero-wrapper .stat-label,
+.hero-wrapper .premium-badge,
+.hero-wrapper .hero-stats .stat-label {
+    color: var(--gold) !important;
+}
+
+.hero-wrapper .hero-subtitle {
+    color: rgba(212,175,55,0.95) !important;
+}
+
+/* Premium Badge */
+.premium-badge {
+    display: inline-block;
+    background: #fdf5e6;
+    color: #e69c24;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(230, 156, 36, 0.1);
+    border: 1px solid rgba(230, 156, 36, 0.2);
+}
+
+.premium-badge i {
+    color: #e69c24;
+}
+
+/* Hero Title & Text */
+.hero-title {
+    color: var(--brown-text);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 4.5rem;
+    /* Huge size */
+}
+
+/* Category pills (homepage) - elegant golden pills */
+.category-pills .btn-pill {
+    background: transparent;
+    border: 2px solid rgba(212,175,55,0.12);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 999px;
+    margin: 6px;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 18px rgba(84, 55, 45, 0.06);
+}
+
+.category-pills .btn-pill:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212,175,55,0.25);
+    box-shadow: 0 12px 30px rgba(84, 55, 45, 0.12);
+}
+
+.category-pills .btn-pill.active {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: #fff !important;
+    border-color: transparent;
+    box-shadow: 0 12px 30px rgba(212,175,55,0.18);
+}
+
+/* Clean category card style used on homepage */
+.category-clean-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(84, 55, 45, 0.06);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    border: 2px solid var(--gold); /* golden border for each card */
+}
+
+.category-clean-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(84,55,45,0.12);
+    border-color: var(--gold-dark);
+}
+
+.category-clean-card .cat-icon-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px auto;
+    background: linear-gradient(180deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));
+    color: var(--gold-dark);
+    font-size: 1.6rem;
+}
+
+.category-clean-card .cat-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    color: var(--gold) !important;
+    margin-bottom: 6px;
+}
+
+.category-clean-card .cat-desc {
+    color: var(--gold) !important;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.category-clean-card .cat-badge {
+    display: inline-block;
+    background: rgba(212,175,55,0.12);
+    color: var(--gold) !important;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Horizontal long-rectangle category cards */
+.category-rects {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 6px 12px;
+}
+
+.category-rect {
+    display: block;
+    width: 340px;
+    height: 140px;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    flex: 0 0 auto;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 2px solid rgba(212,175,55,0.12);
+}
+
+.category-rect:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.category-rect .rect-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center center;
+    filter: brightness(0.7) saturate(1.05);
+    z-index: 1;
+}
+
+.category-rect .rect-overlay {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.category-rect .rect-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 1.45rem;
+    color: var(--gold) !important;
+    text-shadow: 0 6px 24px rgba(0,0,0,0.5);
+}
+
+/* Ensure other category label variations are golden too */
+.cat-name-label,
+.cat-title,
+.category-clean-card .cat-title,
+.category-rect .rect-subtitle {
+    color: var(--gold) !important;
+}
+
+.category-rect.active {
+    outline: 3px solid rgba(212,175,55,0.18);
+    border-color: rgba(212,175,55,0.28);
+    box-shadow: 0 20px 50px rgba(212,175,55,0.08), 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Responsive smaller sizes */
+@media (max-width: 768px) {
+    .category-rect { width: 80%; height: 120px; }
+    .category-rects { gap: 12px; }
+}
+
+.text-gold {
+    color: #e6a836;
+    /* Slightly softer gold for text */
+}
+
+.hero-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+/* Custom Outline Button */
+.btn-outline-custom {
+    border: 2px solid var(--brown-text);
+    color: var(--brown-text);
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btn-outline-custom:hover {
+    background: var(--brown-text);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Adjust Hero Card for Split Layout */
+.hero-card {
+    height: 650px;
+    /* Taller */
+    width: 100%;
+    margin-left: 20px;
+}
+
+/* Hero Stats */
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #4a3b2a;
+    /* Dark brown */
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.stat-label {
+    font-family: 'Open Sans', sans-serif;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: -5px;
+}
+
+/* =========================================
+   New Categories Section (Clean Cards)
+   ========================================= */
+.category-clean-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px 30px;
+    /* More generous padding */
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid var(--gold);
+    height: 100%;
+    min-height: 300px;
+    /* Ensure tall cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-clean-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border-color: transparent;
+}
+
+.cat-icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    transition: all 0.3s;
+}
+
+/* Specific colors for icons */
+.bg-pink-light {
+    background-color: #ffeef2;
+    color: #ff5e89;
+}
+
+.bg-yellow-light {
+    background-color: #fff9e6;
+    color: #ffbb00;
+}
+
+.bg-orange-light {
+    background-color: #fff4e6;
+    color: #ff9100;
+}
+
+.bg-brown-light {
+    background-color: #f5efe6;
+    color: #795548;
+}
+
+.bg-purple-light {
+    background-color: #f3e5f5;
+    color: #ab47bc;
+}
+
+.cat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4a3b2a;
+    margin-bottom: 10px;
+}
+
+.cat-desc {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.cat-badge {
+    color: #e6a836;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Shop Page Pills */
+.btn-pill {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    color: #5d4037;
+    border-radius: 50px;
+    padding: 10px 25px;
+    margin: 5px 10px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-pill:hover,
+.btn-pill.active {
+    color: #fff;
+    border-color: #5d4037;
+    box-shadow: 0 5px 15px rgba(93, 64, 55, 0.2);
+}
+
+/* Fix for Bottom Category Carousel in shop.php */
+.owl-carousel .item .card-img {
+    width: 100%;
+    height: 180px;
+    /* Fixed height match square look */
+    object-fit: cover;
+    /* Prevent stretching */
+    border-radius: 0;
+    /* Strict square corners */
+    border: 3px solid #d4af37;
+    /* Golden border */
+}
+.product-card img, .product-thumbnail img, .product-img img { width: 100%; height: 250px !important; object-fit: cover; object-position: center; }
+
+.card-img, .card-img-top, .product-card img, .product-thumbnail img, .product-img img, .item .card-img { width: 100% !important; height: 250px !important; object-fit: cover !important; object-position: center !important; display: block !important; margin: 0 auto !important; }
+
+/* E-commerce Image Formatting override */
+.card-img, .card-img-top, .product-card img, .product-thumbnail img, .product-img img, .item .card-img { width: 100% !important; height: auto !important; aspect-ratio: 1 / 1 !important; object-fit: contain !important; object-position: center !important; background-color: #ffffff !important; padding: 15px !important; box-sizing: border-box !important; filter: brightness(1.02) contrast(1.02) !important; display: block !important; margin: 0 auto !important; }
+
+/* Live Message Preview */
+.live-message-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Playfair Display', cursive, serif; font-size: 2.2rem; font-style: italic; font-weight: 700; color: rgba(255,255,255,0.9); text-shadow: 2px 2px 8px rgba(0,0,0,0.8), -1px -1px 4px rgba(0,0,0,0.6); text-align: center; width: 90%; pointer-events: none; z-index: 10; transition: all 0.2s ease-out; }
+
+/* Micro Interactions */
+@keyframes cartBounce { 0% { transform: scale(1); } 40% { transform: scale(1.15) translateY(-5px); } 60% { transform: scale(0.95) translateY(2px); } 80% { transform: scale(1.05) translateY(-2px); } 100% { transform: scale(1); } }
+.btn-add-cart-bounce:active, .btn-bounce-active { animation: cartBounce 0.4s ease-in-out !important; }
+.wishlist-icon { cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.wishlist-icon.active { color: #ff4757 !important; transform: scale(1.3); }
+
